@@ -21,7 +21,8 @@ class CocktailViewModel @Inject constructor(
             it.fold(::handleFailure) {
                 state.value = CocktailViewState.CocktailsReceived(it.drinks ?: listOf())
 
-                saveCocktails(it.drinks ?: listOf())
+                saveCocktails(it.drinks ?: listOf())//Sirve para mandar los datos de una vez al
+                //saveCocktails, para que se guarde en la BD
 
                 true
             }

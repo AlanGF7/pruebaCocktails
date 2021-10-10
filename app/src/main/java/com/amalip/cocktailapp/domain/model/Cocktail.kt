@@ -18,6 +18,9 @@ class Cocktail(
     @Json(name = "strCategory") val category: String = "",
     @Json(name = "strDrinkThumb") val urlThumb: String = "",
     @Json(name = "strImageSource") val url: String? = "",
-    @Json(name = "strAlcoholic") val alcoholic: String? = ""
+    //Propiedad agregada
+    @Json(name = "strAlcoholic") val alcoholic: String? = "",
+    //Propiedad de práctica
+    @Json(name = "strInstructions") val instructions: String? = ""
 ) {
 }

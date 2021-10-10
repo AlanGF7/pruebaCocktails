@@ -9,9 +9,17 @@ import com.amalip.cocktailapp.domain.model.Cocktail
  * Created by Amalip on 10/5/2021.
  */
 
-@Database(entities = [Cocktail::class], version = 2)
+//Necesario para usar "Room"
+
+//Especificamos las tablas, la versión y las entidades.
+
+//Cualquier cambio que se haga en la base de datos debe de ser respaldada por una versión 2 o posterior
+
+@Database(entities = [Cocktail::class], version = 3)
 abstract class CocktailDb : RoomDatabase() {
 
     abstract fun cocktailDao(): CocktailDao
 
 }
+
+//Manejador de la base de datos

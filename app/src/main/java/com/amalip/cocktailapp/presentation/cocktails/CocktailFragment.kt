@@ -45,11 +45,13 @@ class CocktailFragment : BaseFragment(R.layout.cocktail_fragment) {
     }
 
     private fun setUpAdapter(cocktails: List<Cocktail>) {
+        //Binding contiene las vistas
         binding.emptyView.isVisible = cocktails.isEmpty()
 
         adapter.addData(cocktails)
 
         binding.rcCocktails.apply {
+            //Tenemos que pintar el RecycleView porque lo pusimos en 'Gone'
             isVisible = cocktails.isNotEmpty()
             adapter = this@CocktailFragment.adapter
         }
