@@ -25,6 +25,7 @@ object DatabaseModule {
     private val MIGRATION_3_4 = object : Migration(3, 4) {
         override fun migrate(database: SupportSQLiteDatabase) {
             //Estamos alterando la tabla, agregando un campo nuevo
+            //database.execSQL("ALTER TABLE Cocktail ADD COLUMN Instructions")
             database.execSQL("CREATE TABLE User(idUser INTEGER PRIMARY KEY NOT NULL, nameUser TEXT NOT NULL, email TEXT NOT NULL, imageUser TEXT, token TEXT)")
             //Versión 1 a 2 exitosa
         }

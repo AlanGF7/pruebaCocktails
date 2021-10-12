@@ -16,7 +16,9 @@ import com.amalip.cocktailapp.domain.model.User
 
 //Cualquier cambio que se haga en la base de datos debe de ser respaldada por una versión 2 o posterior
 
-@Database(entities = [Cocktail::class, User::class], version = 4)
+//
+
+@Database(entities = [Cocktail::class , User::class], version = 4)
 abstract class CocktailDb : RoomDatabase() {
 
     abstract fun cocktailDao(): CocktailDao

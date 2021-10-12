@@ -10,9 +10,15 @@ import com.amalip.cocktailapp.R
  * Created by Amalip on 10/1/2021.
  */
 
+@BindingAdapter("loadFromUrlCircular")
+fun ImageView.loadFromUrlCircular(url: String) = this.load(url) {
+    crossfade(true)
+    placeholder(R.drawable.ic_cocktails)
+    transformations(CircleCropTransformation())
+}
+
 @BindingAdapter("loadFromUrl")
 fun ImageView.loadFromURL(url: String) = this.load(url) {
     crossfade(true)
     placeholder(R.drawable.ic_cocktails)
-    transformations(CircleCropTransformation())
 }

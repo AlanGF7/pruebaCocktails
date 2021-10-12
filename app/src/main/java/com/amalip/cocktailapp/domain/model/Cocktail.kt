@@ -23,4 +23,7 @@ class Cocktail(
     //Propiedad de práctica
     @Json(name = "strInstructions") val instructions: String? = ""
 ) {
+
+    val urlDetail: String
+    get() = url ?: urlThumb //Si la url llega nula, entonces usará la urlThumb
 }

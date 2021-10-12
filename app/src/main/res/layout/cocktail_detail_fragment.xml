@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="cocktail"
+            type="com.amalip.cocktailapp.domain.model.Cocktail" />
+        
+    </data>
+    
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.cocktaildetail.CocktailDetailFragment">
+
+        <ImageView
+            android:id="@+id/imgCocktail"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_margin="14dp"
+            loadFromUrl="@{cocktail.url}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imgFavorite"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_star"
+            app:layout_constraintEnd_toEndOf="@id/imgCocktail"
+            app:layout_constraintTop_toTopOf="@id/imgCocktail" />
+
+        <TextView
+            android:id="@+id/txvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:text="@{cocktail.name}"
+            app:layout_constraintStart_toStartOf="@id/imgCocktail"
+            app:layout_constraintTop_toBottomOf="@id/imgCocktail"
+            tools:text="Margarita" />
+
+        <TextView
+            android:id="@+id/txvCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@{cocktail.category}"
+            app:layout_constraintEnd_toStartOf="@id/txvAlcoholic"
+            app:layout_constraintStart_toEndOf="@id/txvName"
+            app:layout_constraintTop_toTopOf="@id/txvName"
+            tools:text="Category" />
+
+        <TextView
+            android:id="@+id/txvAlcoholic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@{cocktail.alcoholic}"
+            app:layout_constraintEnd_toEndOf="@id/imgCocktail"
+            app:layout_constraintTop_toTopOf="@id/txvName"
+            tools:text="Alcoholic" />
+
+        <TextView
+            android:id="@+id/txvInstructions"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@{cocktail.instructions}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imgCocktail"
+            app:layout_constraintStart_toStartOf="@id/imgCocktail"
+            app:layout_constraintTop_toBottomOf="@id/txvName"
+            tools:text="@tools:sample/lorem/random"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
